@@ -8,3 +8,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^1.0.3
+  badges: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
