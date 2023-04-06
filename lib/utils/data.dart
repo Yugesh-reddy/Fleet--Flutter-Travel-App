@@ -3,3 +3,12 @@ var profile = {
   "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
   "email": "sangvaleap.s@gmail.com"
 };
+
+List notifications = [
+  {
+    "name": "Camp Adventure",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "post": "50% off for weekend booking",
+    "time": "3 hours ago"
+  }
+];
