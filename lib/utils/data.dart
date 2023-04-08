@@ -8,6 +8,8 @@ List categories = [
   {"name": "All", "icon": "assets/icons/navigation.svg"},
   {"name": "Camp", "icon": "assets/icons/marker.svg"},
   {"name": "Forest", "icon": "assets/icons/marker.svg"},
+  {"name": "Mountain", "icon": "assets/icons/marker.svg"},
+  {"name": "Beach", "icon": "assets/icons/marker.svg"},
 ];
 
 List notifications = [
