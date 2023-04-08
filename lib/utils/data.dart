@@ -4,6 +4,12 @@ var profile = {
   "email": "sangvaleap.s@gmail.com"
 };
 
+List categories = [
+  {"name": "All", "icon": "assets/icons/navigation.svg"},
+  {"name": "Camp", "icon": "assets/icons/marker.svg"},
+  {"name": "Forest", "icon": "assets/icons/marker.svg"},
+];
+
 List notifications = [
   {
     "name": "Camp Adventure",
