@@ -12,11 +12,12 @@ List categories = [
   {"name": "Beach", "icon": "assets/icons/marker.svg"},
 ];
 
-List notifications = [
+List populars = [
   {
-    "name": "Camp Adventure",
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-    "post": "50% off for weekend booking",
-    "time": "3 hours ago"
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "name": "Tropical Beach Haven",
+    "price": "\$150",
+    "location": "Phuket, Thailand",
+    "is_favorited": true,
   }
 ];
