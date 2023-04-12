@@ -19,5 +19,7 @@ List populars = [
     "price": "\$150",
     "location": "Phuket, Thailand",
     "is_favorited": true,
+    "rate": "4.8",
+    "id": "pro_01"
   }
 ];
