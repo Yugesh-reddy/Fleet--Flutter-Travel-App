@@ -4,14 +4,11 @@ var profile = {
   "email": "sangvaleap.s@gmail.com"
 };
 
-List explores = [
+List comments = [
   {
-    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-    "name": "Tropical Beach Haven",
-    "price": "\$150",
-    "location": "Phuket, Thailand",
-    "is_favorited": true,
-    "rate": "4.8",
-    "id": "exp_01"
+    "name": "Jessica Taylor",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "comment": "Amazing destination! Truly exceeded expectations.",
+    "date": "2 days ago"
   }
 ];
