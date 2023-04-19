@@ -10,6 +10,7 @@ class IconBox extends StatelessWidget {
     this.borderColor = Colors.transparent,
     this.radius = 50,
     this.padding = 5,
+    this.isShadow = false,
   }) : super(key: key);
 
   final Widget child;
@@ -18,17 +19,21 @@ class IconBox extends StatelessWidget {
   final GestureTapCallback? onTap;
   final double radius;
   final double padding;
+  final bool isShadow;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(padding),
-      decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(radius),
-        border: Border.all(color: borderColor),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.all(padding),
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: BorderRadius.circular(radius),
+          border: Border.all(color: borderColor),
+        ),
+        child: child,
       ),
-      child: child,
     );
   }
 }
