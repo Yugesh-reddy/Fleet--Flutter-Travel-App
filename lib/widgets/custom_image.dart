@@ -32,13 +32,22 @@ class CustomImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(radius),
-      child: Image.network(
-        image,
-        width: width,
-        height: height,
-        fit: fit,
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(radius),
+        border: Border.all(color: borderColor ?? Colors.transparent, width: borderWidth),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(radius),
+        child: Image.network(
+          image,
+          width: width,
+          height: height,
+          fit: fit,
+        ),
       ),
     );
   }
