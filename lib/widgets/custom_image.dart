@@ -15,6 +15,7 @@ class CustomImage extends StatelessWidget {
     this.blRadius = 0,
     this.radius = 0,
     this.fit = BoxFit.cover,
+    this.isNetwork = true,
   }) : super(key: key);
 
   final String image;
@@ -29,6 +30,7 @@ class CustomImage extends StatelessWidget {
   final double blRadius;
   final double radius;
   final BoxFit fit;
+  final bool isNetwork;
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +44,9 @@ class CustomImage extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(radius),
-        child: Image.network(
-          image,
-          width: width,
-          height: height,
-          fit: fit,
-        ),
+        child: isNetwork
+            ? Image.network(image, width: width, height: height, fit: fit)
+            : Image.asset(image, width: width, height: height, fit: fit),
       ),
     );
   }
