@@ -39,11 +39,25 @@ class CustomImage extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         color: bgColor,
-        borderRadius: BorderRadius.circular(radius),
+        borderRadius: radius > 0
+            ? BorderRadius.circular(radius)
+            : BorderRadius.only(
+                topLeft: Radius.circular(tlRadius),
+                topRight: Radius.circular(trRadius),
+                bottomLeft: Radius.circular(blRadius),
+                bottomRight: Radius.circular(brRadius),
+              ),
         border: Border.all(color: borderColor ?? Colors.transparent, width: borderWidth),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(radius),
+        borderRadius: radius > 0
+            ? BorderRadius.circular(radius)
+            : BorderRadius.only(
+                topLeft: Radius.circular(tlRadius),
+                topRight: Radius.circular(trRadius),
+                bottomLeft: Radius.circular(blRadius),
+                bottomRight: Radius.circular(brRadius),
+              ),
         child: isNetwork
             ? Image.network(image, width: width, height: height, fit: fit)
             : Image.asset(image, width: width, height: height, fit: fit),
