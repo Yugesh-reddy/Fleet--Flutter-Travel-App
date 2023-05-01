@@ -20,21 +20,39 @@ class CategoryItem extends StatelessWidget {
       onTap: onTap,
       child: Column(
         children: [
-          Container(
-            padding: EdgeInsets.all(15),
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 500),
+            padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: isSelected ? primary : cardColor,
-              shape: BoxShape.circle,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: shadowColor.withOpacity(0.05),
+                  spreadRadius: .5,
+                  blurRadius: .5,
+                  offset: Offset(0, 1),
+                ),
+              ],
             ),
             child: SvgPicture.asset(
               data["icon"],
               color: isSelected ? Colors.white : darker,
-              width: 25,
-              height: 25,
+              width: 20,
+              height: 20,
             ),
           ),
           SizedBox(height: 5),
-          Text(data["name"]),
+          Text(
+            data["name"],
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 13,
+              color: isSelected ? primary : darker,
+              fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
+            ),
+          ),
         ],
       ),
     );
