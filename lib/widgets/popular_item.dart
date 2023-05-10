@@ -16,7 +16,23 @@ class PopularItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomImage(data["image"], radius: 15, height: 140, width: 200),
+            Stack(
+              children: [
+                CustomImage(data["image"], radius: 15, height: 140, width: 200),
+                Positioned(
+                  top: 10,
+                  right: 10,
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Text(data["price"]),
+                  ),
+                ),
+              ],
+            ),
             SizedBox(height: 10),
             Text(data["name"]),
             Text(data["location"]),
