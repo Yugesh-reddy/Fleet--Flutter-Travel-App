@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'custom_image.dart';
+import 'package:travel_app/theme/color.dart';
 
 class PopularItem extends StatelessWidget {
   const PopularItem({Key? key, required this.data, this.onTap}) : super(key: key);
@@ -25,17 +26,23 @@ class PopularItem extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: primary,
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text(data["price"]),
+                    child: Text(data["price"], style: TextStyle(color: Colors.white)),
                   ),
                 ),
               ],
             ),
             SizedBox(height: 10),
             Text(data["name"]),
-            Text(data["location"]),
+            Row(
+              children: [
+                SvgPicture.asset("assets/icons/star.svg", width: 14, height: 14),
+                SizedBox(width: 4),
+                Text(data["rate"]),
+              ],
+            ),
           ],
         ),
       ),
