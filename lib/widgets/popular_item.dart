@@ -29,25 +29,22 @@ class PopularItem extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                CustomImage(data["image"], radius: radius, height: 140, width: width),
-                Positioned(
-                  bottom: 10,
-                  right: 10,
-                  child: IconBox(
-                    bgColor: Colors.white,
-                    onTap: onFavoriteTap,
-                    child: SvgPicture.asset(
-                      "assets/icons/heart.svg",
-                      color: data["is_favorited"] ? Colors.red : primary,
-                    ),
-                  ),
-                ),
-              ],
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(radius),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: shadowColor.withOpacity(0.1),
+              spreadRadius: 1,
+              blurRadius: 1,
+              offset: Offset(0, 1),
             ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomImage(data["image"], radius: radius, height: 140, width: width),
           ],
         ),
       ),
