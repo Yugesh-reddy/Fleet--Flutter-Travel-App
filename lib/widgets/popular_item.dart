@@ -1,52 +1,63 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import 'custom_image.dart';
-import 'icon_box.dart';
-import 'package:travel_app/theme/color.dart';
 
 class PopularItem extends StatelessWidget {
-  const PopularItem({
-    Key? key,
-    required this.data,
-    this.width = 200,
-    this.height = 300,
-    this.radius = 15,
-    this.onTap,
-    this.onFavoriteTap,
-  }) : super(key: key);
-
+  PopularItem({ Key? key, required this.data, this.onTap, this.raduis = 20 }) : super(key: key);
   final data;
-  final double width;
-  final double height;
-  final double radius;
+  final double raduis;
   final GestureTapCallback? onTap;
-  final GestureTapCallback? onFavoriteTap;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(radius),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: shadowColor.withOpacity(0.1),
-              spreadRadius: 1,
-              blurRadius: 1,
-              offset: Offset(0, 1),
+    return Container(
+      width: 200,
+      height: 350,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(raduis)
+      ),
+      child: Stack(
+        children: [
+          Container(
+            child: CustomImage(data["image"],
+              radius: raduis, width: double.infinity, height: double.infinity,
             ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomImage(data["image"], radius: radius, height: 140, width: width),
-          ],
-        ),
+          ),
+          Container(
+            width: double.infinity, height: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(raduis),
+              gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [
+                  Colors.black.withOpacity(.5),
+                  Colors.white.withOpacity(.01),
+                ]
+              )
+            ),
+          ),
+          Positioned(
+            bottom: 12, left: 10,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(data["name"], maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),),
+                SizedBox(height: 8,),
+                Row(
+                  children: [
+                    SvgPicture.asset("assets/icons/marker.svg", width: 15, height: 15, color: Colors.white,),
+                    SizedBox(width: 5,),
+                    Text(data["location"], style: TextStyle(fontSize: 13, color: Colors.white,),),
+                  ],
+                ),
+              ],
+            ),
+          ),
+
+        ],
       ),
     );
   }
