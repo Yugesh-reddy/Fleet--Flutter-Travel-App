@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'custom_image.dart';
 
 class ExploreItem extends StatelessWidget {
@@ -20,6 +21,8 @@ class ExploreItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(data["name"]),
+                  Text(data["location"]),
+                  Text(data["rate"]),
                 ],
               ),
             ),
