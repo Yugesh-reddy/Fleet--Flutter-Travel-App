@@ -18,11 +18,23 @@ class BottomBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        child: SvgPicture.asset(
-          icon,
-          color: isActive ? primary : inActiveColor,
-        ),
+      child: Column(
+        children: [
+          SvgPicture.asset(
+            icon,
+            color: isActive ? primary : inActiveColor,
+          ),
+          SizedBox(height: 5),
+          AnimatedContainer(
+            duration: Duration(milliseconds: 300),
+            width: isActive ? 20 : 0,
+            height: 3,
+            decoration: BoxDecoration(
+              color: primary,
+              borderRadius: BorderRadius.circular(5),
+            ),
+          ),
+        ],
       ),
     );
   }
