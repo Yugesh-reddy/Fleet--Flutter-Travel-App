@@ -7,11 +7,15 @@ class BottomBarItem extends StatelessWidget {
     this.icon, {
     Key? key,
     this.isActive = false,
+    this.activeColor = primary,
+    this.color = inActiveColor,
     this.onTap,
   }) : super(key: key);
 
   final String icon;
   final bool isActive;
+  final Color activeColor;
+  final Color color;
   final GestureTapCallback? onTap;
 
   @override
@@ -19,20 +23,13 @@ class BottomBarItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SvgPicture.asset(
             icon,
-            color: isActive ? primary : inActiveColor,
-          ),
-          SizedBox(height: 5),
-          AnimatedContainer(
-            duration: Duration(milliseconds: 300),
-            width: isActive ? 20 : 0,
-            height: 3,
-            decoration: BoxDecoration(
-              color: primary,
-              borderRadius: BorderRadius.circular(5),
-            ),
+            color: isActive ? activeColor : color,
+            width: 26,
+            height: 26,
           ),
         ],
       ),
