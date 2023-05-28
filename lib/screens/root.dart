@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/theme/color.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
@@ -13,6 +14,14 @@ class _RootAppState extends State<RootApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: appBgColor,
+      bottomNavigationBar: Container(
+        height: 75,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: bottomBarColor,
+        ),
+      ),
       body: Center(child: Text("Active Tab: $activeTab")),
     );
   }
