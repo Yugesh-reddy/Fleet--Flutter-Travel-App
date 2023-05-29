@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/theme/color.dart';
+import 'package:travel_app/widgets/bottombar_item.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
@@ -20,6 +21,15 @@ class _RootAppState extends State<RootApp> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: bottomBarColor,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            BottomBarItem("assets/icons/home.svg", isActive: activeTab == 0, onTap: () => setState(() => activeTab = 0)),
+            BottomBarItem("assets/icons/search.svg", isActive: activeTab == 1, onTap: () => setState(() => activeTab = 1)),
+            BottomBarItem("assets/icons/heart.svg", isActive: activeTab == 2, onTap: () => setState(() => activeTab = 2)),
+            BottomBarItem("assets/icons/setting.svg", isActive: activeTab == 3, onTap: () => setState(() => activeTab = 3)),
+          ],
         ),
       ),
       body: Center(child: Text("Active Tab: $activeTab")),
