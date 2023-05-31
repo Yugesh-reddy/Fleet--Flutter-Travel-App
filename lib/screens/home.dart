@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/theme/color.dart';
 import 'package:travel_app/utils/data.dart';
 import 'package:travel_app/widgets/custom_image.dart';
+import 'package:travel_app/widgets/notification_box.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                     Text(profile["name"] as String, style: TextStyle(color: primary, fontSize: 20, fontWeight: FontWeight.bold)),
                   ],
                 ),
-                CustomImage(profile["image"] as String, width: 45, height: 45, radius: 50),
+                NotificationBox(notifiedNumber: 1),
               ],
             ),
           ],
