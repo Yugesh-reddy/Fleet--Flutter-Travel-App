@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:travel_app/theme/color.dart';
 import 'package:travel_app/utils/data.dart';
-import 'package:travel_app/widgets/custom_image.dart';
 import 'package:travel_app/widgets/notification_box.dart';
+import 'package:travel_app/widgets/round_textbox.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,6 +35,14 @@ class _HomePageState extends State<HomePage> {
                 ),
                 NotificationBox(notifiedNumber: 1),
               ],
+            ),
+            SizedBox(height: 20),
+            RoundTextBox(
+              hintText: "Search destinations...",
+              prefixIcon: Padding(
+                padding: const EdgeInsets.all(12),
+                child: SvgPicture.asset("assets/icons/search.svg", color: darker),
+              ),
             ),
           ],
         ),
