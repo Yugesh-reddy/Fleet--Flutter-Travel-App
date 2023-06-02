@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:travel_app/theme/color.dart';
 import 'package:travel_app/utils/data.dart';
+import 'package:travel_app/widgets/icon_box.dart';
 import 'package:travel_app/widgets/notification_box.dart';
 import 'package:travel_app/widgets/round_textbox.dart';
 
@@ -37,12 +38,25 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(height: 20),
-            RoundTextBox(
-              hintText: "Search destinations...",
-              prefixIcon: Padding(
-                padding: const EdgeInsets.all(12),
-                child: SvgPicture.asset("assets/icons/search.svg", color: darker),
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: RoundTextBox(
+                    hintText: "Search destinations...",
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: SvgPicture.asset("assets/icons/search.svg", color: darker),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10),
+                IconBox(
+                  bgColor: primary,
+                  radius: 10,
+                  padding: 11,
+                  child: SvgPicture.asset("assets/icons/filter.svg", color: Colors.white, width: 18, height: 18),
+                ),
+              ],
             ),
           ],
         ),
