@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:travel_app/theme/color.dart';
 import 'package:travel_app/utils/data.dart';
+import 'package:travel_app/widgets/category_item.dart';
 import 'package:travel_app/widgets/icon_box.dart';
 import 'package:travel_app/widgets/notification_box.dart';
 import 'package:travel_app/widgets/round_textbox.dart';
@@ -14,6 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int selectedCategory = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +45,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Expanded(
                   child: RoundTextBox(
-                    hintText: "Search destinations...",
+                    hintText: "Search...",
                     prefixIcon: Padding(
                       padding: const EdgeInsets.all(12),
                       child: SvgPicture.asset("assets/icons/search.svg", color: darker),
@@ -57,6 +60,19 @@ class _HomePageState extends State<HomePage> {
                   child: SvgPicture.asset("assets/icons/filter.svg", color: Colors.white, width: 18, height: 18),
                 ),
               ],
+            ),
+            SizedBox(height: 25),
+            Container(
+              height: 70,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: categories.length,
+                itemBuilder: (context, index) => CategoryItem(
+                  data: categories[index],
+                  isSelected: selectedCategory == index,
+                  onTap: () => setState(() => selectedCategory = index),
+                ),
+              ),
             ),
           ],
         ),
