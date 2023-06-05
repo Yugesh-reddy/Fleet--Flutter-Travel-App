@@ -5,6 +5,7 @@ import 'package:travel_app/utils/data.dart';
 import 'package:travel_app/widgets/category_item.dart';
 import 'package:travel_app/widgets/icon_box.dart';
 import 'package:travel_app/widgets/notification_box.dart';
+import 'package:travel_app/widgets/popular_item.dart';
 import 'package:travel_app/widgets/round_textbox.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,32 +43,23 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 20),
             Row(
-              children: [
-                Expanded(
-                  child: RoundTextBox(
-                    hintText: "Search...",
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: SvgPicture.asset("assets/icons/search.svg", color: darker),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 10),
-                IconBox(
-                  bgColor: primary,
-                  radius: 10,
-                  padding: 11,
-                  child: SvgPicture.asset("assets/icons/filter.svg", color: Colors.white, width: 18, height: 18),
-                ),
-              ],
-            ),
-            SizedBox(height: 25),
-            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Popular", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: primary)),
                 Text("See all", style: TextStyle(fontSize: 14, color: darker)),
               ],
+            ),
+            SizedBox(height: 15),
+            Container(
+              height: 290,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: populars.length,
+                itemBuilder: (context, index) => Container(
+                  margin: EdgeInsets.only(right: 15),
+                  child: PopularItem(data: populars[index]),
+                ),
+              ),
             ),
           ],
         ),
