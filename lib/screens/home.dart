@@ -62,17 +62,12 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(height: 25),
-            Container(
-              height: 70,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: categories.length,
-                itemBuilder: (context, index) => CategoryItem(
-                  data: categories[index],
-                  isSelected: selectedCategory == index,
-                  onTap: () => setState(() => selectedCategory = index),
-                ),
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Popular", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: primary)),
+                Text("See all", style: TextStyle(fontSize: 14, color: darker)),
+              ],
             ),
           ],
         ),
