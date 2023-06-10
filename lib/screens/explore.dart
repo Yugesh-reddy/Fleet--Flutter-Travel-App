@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:travel_app/theme/color.dart';
+import 'package:travel_app/utils/data.dart';
+import 'package:travel_app/widgets/explore_category_item.dart';
 import 'package:travel_app/widgets/round_textbox.dart';
 
 class ExplorePage extends StatefulWidget {
@@ -11,6 +13,8 @@ class ExplorePage extends StatefulWidget {
 }
 
 class _ExplorePageState extends State<ExplorePage> {
+  int selectedCategory = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,11 +28,20 @@ class _ExplorePageState extends State<ExplorePage> {
             Text("Find your best
 destination", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: primary)),
             SizedBox(height: 20),
-            RoundTextBox(
-              hintText: "Search destinations...",
-              prefixIcon: Padding(
-                padding: const EdgeInsets.all(12),
-                child: SvgPicture.asset("assets/icons/search.svg", color: darker),
+            Container(
+              height: 45,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: exploreCategories.length,
+                itemBuilder: (context, index) => Container(
+                  margin: EdgeInsets.only(right: 10),
+                  child: ExploreCategoryItem(
+                    data: exploreCategories[index],
+                    bgColor: selectedCategory == index ? primary : Colors.white,
+                    color: selectedCategory == index ? Colors.white : primary,
+                    onTap: () => setState(() => selectedCategory = index),
+                  ),
+                ),
               ),
             ),
           ],
