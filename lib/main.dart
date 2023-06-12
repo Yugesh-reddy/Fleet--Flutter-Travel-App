@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'screens/root.dart';
 import 'theme/color.dart';
-
 void main() {
   runApp(MyApp());
 }
@@ -14,10 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: primary,
       ),
-      home: Scaffold(
-        backgroundColor: appBgColor,
-        body: Center(child: Text('Fleet Travel App')),
-      ),
+      home: RootApp(),
     );
   }
+
 }
