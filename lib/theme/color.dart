@@ -27,5 +27,3 @@ const sky = Color(0xFFABDEE6);
 const blue = Color(0xFF509BE4);
 
 const listColors = [green, purple, yellow, orange, sky, secondary, red, blue, pink, yellow,];
-// UI design token improvements
-// Enhanced shadow contrast for light themes
