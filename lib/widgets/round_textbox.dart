@@ -28,5 +28,3 @@ class RoundTextBox extends StatelessWidget {
       );
   }
 }
-
-// Input styling adjustments
