@@ -62,4 +62,3 @@ class PopularItem extends StatelessWidget {
     );
   }
 }
-// Enhanced gesture response
