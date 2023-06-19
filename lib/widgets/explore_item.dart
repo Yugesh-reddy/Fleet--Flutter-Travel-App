@@ -51,3 +51,4 @@ class ExploreItem extends StatelessWidget {
     );
   }
 }
+// Thumbnail aspect ratio tuning
