@@ -130,3 +130,5 @@ class _HomePageState extends State<HomePage> {
       );
   }
 }
+
+// Smooth scrolling physics optimizations
