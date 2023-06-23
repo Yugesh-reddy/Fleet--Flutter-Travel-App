@@ -128,3 +128,5 @@ class _ExplorePageState extends State<ExplorePage> {
   }
 
 }
+
+// Responsive constraints refinement
