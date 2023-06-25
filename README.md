@@ -19,3 +19,20 @@ Fleet is an advanced Flutter application built to solve the real-world challenge
 - **Personalization & Intelligence:** Recommendations adapt to your preferences, travel style, and past selections.
 - **Realtime Sync & Security:** All plans, discoveries, and preferences are securely stored in the cloud with user authentication.
 - **AI-Powered Enhancements:** Leverage machine learning for smarter suggestions and automated itinerary insights.
+
+***
+
+## Technology Stack & Integrations
+
+| Technology | Purpose/Integration |
+| :-- | :-- |
+| **Flutter (Dart)** | Modern, cross-platform app development and sleek user interface |
+| **Firebase** | End-to-end backend including: |
+|  | - **Firestore Database:** Scalable, real-time storage and queries |
+|  | - **Storage:** Asset and photo storage |
+|  | - **Authentication:** Secure user login and session management |
+|  | - **Messaging:** In-app notifications and user communication |
+|  | - **Hosting:** Fast, reliable web asset deployment |
+|  | - **Machine Learning:** Enhances personalized recommendations |
+| **Google Maps API** | Route visualization, live distance measurement, navigation, places search |
+| **Google Places API** | Discovery of lodging, dining, and attractions along the journey |
