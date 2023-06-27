@@ -36,3 +36,13 @@ Fleet is an advanced Flutter application built to solve the real-world challenge
 |  | - **Machine Learning:** Enhances personalized recommendations |
 | **Google Maps API** | Route visualization, live distance measurement, navigation, places search |
 | **Google Places API** | Discovery of lodging, dining, and attractions along the journey |
+
+
+***
+
+## Key Features in Detail
+
+- **Destination Discovery:** Browse and filter destinations by interests, amenities, and trending status.
+- **Trip Cost Estimator:** Uses real-time route data to estimate costs including fuel and potential stops.
+- **Hotel & Restaurant Finder:** Integrated recommendations for accommodations and eateries, including ratings and distance.
+- **Modern UX/UI:** Effortless navigation, animated transitions, and a responsive design for any device.
