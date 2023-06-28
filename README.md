@@ -1,4 +1,8 @@
-# Fleet — Flutter Road Trip Planner & Destination Discovery App
+
+
+
+
+# Fleet — Flutter Road Trip Planner \& Destination Discovery App
 
 Fleet is an advanced Flutter application built to solve the real-world challenges of planning a memorable road trip. By combining seamless destination discovery, accurate trip cost estimation, and personalized recommendations, Fleet is your essential digital co-pilot for smarter road travel. An elegant Flutter UI featuring explore and home screens, categories, and popular destinations. 
 
@@ -14,15 +18,15 @@ Fleet is an advanced Flutter application built to solve the real-world challenge
 
 - **Discover New Destinations:** Browse curated lists, trending places, and hidden gems for your planned route.
 - **Estimate Trip Costs:** Instantly calculate estimated travel expenses using live distance measurements, optimized via Google Maps APIs.
-- **Nearby Hotels & Restaurants:** Get up-to-date hotel and restaurant options for each potential stop or destination, powered by Google Places API.
+- **Nearby Hotels \& Restaurants:** Get up-to-date hotel and restaurant options for each potential stop or destination, powered by Google Places API.
 - **Interactive Maps:** Visualize your journey, view routes, and explore amenities with integrated, interactive maps.
-- **Personalization & Intelligence:** Recommendations adapt to your preferences, travel style, and past selections.
-- **Realtime Sync & Security:** All plans, discoveries, and preferences are securely stored in the cloud with user authentication.
+- **Personalization \& Intelligence:** Recommendations adapt to your preferences, travel style, and past selections.
+- **Realtime Sync \& Security:** All plans, discoveries, and preferences are securely stored in the cloud with user authentication.
 - **AI-Powered Enhancements:** Leverage machine learning for smarter suggestions and automated itinerary insights.
 
 ***
 
-## Technology Stack & Integrations
+## Technology Stack \& Integrations
 
 | Technology | Purpose/Integration |
 | :-- | :-- |
@@ -44,5 +48,28 @@ Fleet is an advanced Flutter application built to solve the real-world challenge
 
 - **Destination Discovery:** Browse and filter destinations by interests, amenities, and trending status.
 - **Trip Cost Estimator:** Uses real-time route data to estimate costs including fuel and potential stops.
-- **Hotel & Restaurant Finder:** Integrated recommendations for accommodations and eateries, including ratings and distance.
+- **Hotel \& Restaurant Finder:** Integrated recommendations for accommodations and eateries, including ratings and distance.
 - **Modern UX/UI:** Effortless navigation, animated transitions, and a responsive design for any device.
+
+***
+
+
+
+## Project structure
+
+```
+lib/
+  main.dart
+  screens/
+    explore.dart
+    home.dart
+    root.dart
+  theme/
+    color.dart
+  utils/
+    constant.dart
+    data.dart
+  widgets/
+    ...
+```
+
