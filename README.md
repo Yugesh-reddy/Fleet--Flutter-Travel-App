@@ -1,92 +1,59 @@
-# Fleet — Flutter Travel App
 
-An elegant Flutter UI for a travel discovery app featuring explore and home screens, categories, and popular destinations. This repository currently ships the UI and local data only. Backend services (Firebase), maps, and social authentication are outlined below as optional integrations you can add.
+
+
+
+# Fleet — Flutter Road Trip Planner \& Destination Discovery App
+
+Fleet is an advanced Flutter application built to solve the real-world challenges of planning a memorable road trip. By combining seamless destination discovery, accurate trip cost estimation, and personalized recommendations, Fleet is your essential digital co-pilot for smarter road travel. An elegant Flutter UI featuring explore and home screens, categories, and popular destinations. 
+
+***
 
 ## Demo
 
-If your browser supports it, the video will play inline. Otherwise, use the download link.
+[![Watch the video](https://img.youtube.com/vi/b09sQ89U9Rw/maxresdefault.jpg)](https://youtu.be/b09sQ89U9Rw)
 
-<video src="./Screen%20Recording%202023-07-24%20at%2012.28.38%20AM.mov" controls width="720"></video>
+### [See Fleet in action](https://youtu.be/b09sQ89U9Rw)
 
-[Download the demo video](./Screen%20Recording%202023-07-24%20at%2012.28.38%20AM.mov)
+## What Fleet Does
 
-## Features
+- **Discover New Destinations:** Browse curated lists, trending places, and hidden gems for your planned route.
+- **Estimate Trip Costs:** Instantly calculate estimated travel expenses using live distance measurements, optimized via Google Maps APIs.
+- **Nearby Hotels \& Restaurants:** Get up-to-date hotel and restaurant options for each potential stop or destination, powered by Google Places API.
+- **Interactive Maps:** Visualize your journey, view routes, and explore amenities with integrated, interactive maps.
+- **Personalization \& Intelligence:** Recommendations adapt to your preferences, travel style, and past selections.
+- **Realtime Sync \& Security:** All plans, discoveries, and preferences are securely stored in the cloud with user authentication.
+- **AI-Powered Enhancements:** Leverage machine learning for smarter suggestions and automated itinerary insights.
 
-- UI: Explore list, categories, staggered grid, carousel of popular destinations
-- Clean bottom navigation with animations
-- SVG icons, Google Fonts, cached images
+***
 
-## Tech Stack
+## Technology Stack \& Integrations
 
-- Flutter (Dart)
-- Packages (from `pubspec.yaml`):
-  - `carousel_slider`
-  - `flutter_staggered_grid_view`
-  - `flutter_svg`
-  - `cached_network_image`
-  - `google_fonts`
+| Technology | Purpose/Integration |
+| :-- | :-- |
+| **Flutter (Dart)** | Modern, cross-platform app development and sleek user interface |
+| **Firebase** | End-to-end backend including: |
+|  | - **Firestore Database:** Scalable, real-time storage and queries |
+|  | - **Storage:** Asset and photo storage |
+|  | - **Authentication:** Secure user login and session management |
+|  | - **Messaging:** In-app notifications and user communication |
+|  | - **Hosting:** Fast, reliable web asset deployment |
+|  | - **Machine Learning:** Enhances personalized recommendations |
+| **Google Maps API** | Route visualization, live distance measurement, navigation, places search |
+| **Google Places API** | Discovery of lodging, dining, and attractions along the journey |
 
-## What’s implemented now
 
-- Stateless/Stateful screens for Explore/Home (`lib/screens/*.dart`)
-- Theming in `lib/theme/color.dart`
-- Reusable widgets in `lib/widgets/`
-- Local mock data in `lib/utils/data.dart`
+***
 
-## Optional integrations (not yet in code)
+## Key Features in Detail
 
-The current codebase does not yet include backend or auth packages. Below are battle‑tested steps to add them.
+- **Destination Discovery:** Browse and filter destinations by interests, amenities, and trending status.
+- **Trip Cost Estimator:** Uses real-time route data to estimate costs including fuel and potential stops.
+- **Hotel \& Restaurant Finder:** Integrated recommendations for accommodations and eateries, including ratings and distance.
+- **Modern UX/UI:** Effortless navigation, animated transitions, and a responsive design for any device.
 
-### Firebase (Backend)
+***
 
-1) Add packages to `pubspec.yaml`:
 
-```yaml
-dependencies:
-  firebase_core: ^latest
-  cloud_firestore: ^latest
-  firebase_auth: ^latest
-```
-
-2) Initialize Firebase:
-
-```dart
-import 'package:firebase_core/firebase_core.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(MyApp());
-}
-```
-
-3) Configure Firebase for iOS/Android using the Firebase Console and add `GoogleService-Info.plist` (iOS) and `google-services.json` (Android). Update Gradle files per Firebase docs.
-
-### Google Maps
-
-1) Add packages:
-
-```yaml
-dependencies:
-  google_maps_flutter: ^latest
-  geolocator: ^latest
-```
-
-2) iOS: add your Maps API key to `AppDelegate`/Info.plist. Android: add the API key to `AndroidManifest.xml`.
-
-3) Use `GoogleMap` widget to render maps and markers.
-
-### Authentication (Google & Facebook)
-
-1) Add packages:
-
-```yaml
-dependencies:
-  google_sign_in: ^latest
-  flutter_facebook_auth: ^latest
-```
-
-2) Wire sign‑in flows and, if using Firebase, link tokens with `FirebaseAuth`.
 
 ## Project structure
 
@@ -106,17 +73,3 @@ lib/
     ...
 ```
 
-## Getting started
-
-```bash
-flutter pub get
-flutter run
-```
-
-## Repo
-
-This project is hosted on GitHub: https://github.com/Yugesh-reddy/Fleet--Flutter-Travel-App
-
----
-
-If you want, we can integrate Firebase, Google Maps, and social login next and update this README accordingly.
